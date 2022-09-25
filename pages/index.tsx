@@ -1,7 +1,16 @@
 import type { NextPage } from "next";
+import Careers from "../components/Careers";
+import Contacts from "../components/Contacts";
 
 const Home: NextPage = () => {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <>
+      <div className="container mx-auto sm:px-6 lg:px-8">
+        <Careers />
+      </div>
+      <Contacts />
+    </>
+  );
 };
 
 export default Home;
