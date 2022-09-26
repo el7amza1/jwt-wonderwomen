@@ -28,7 +28,7 @@ export default function Contacts() {
       <div className="lg:absolute lg:inset-0">
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
-            className="h-56 w-full object-cover lg:absolute lg:h-full"
+            className="h-56 w-full object-cover lg:absolute lg:h-full object-top"
             src="./images/women.jpg"
             alt=""
           />

@@ -61,19 +61,19 @@ export default function Careers() {
     getJobs();
   }, []);
   return (
-    <div className="columns-2 ">
-      <div>
+    <div className="lg:flex justify-around items-center">
+      <div className="hidden lg:block lg:w-1/2">
         <img
           className="h-full w-full object-cover"
           src="./images/jobs (1).jpg"
           alt=""
         />
       </div>
-      <div className="bg-white shadow sm:rounded-md my-5">
+      <div className="bg-white shadow sm:rounded-md h-full lg:w-1/2">
         <CareersH />
         <ul
           role="list"
-          className="overflow-scroll overflow-x-hidden h-80 divide-y divide-gray-200"
+          className="overflow-scroll overflow-x-hidden divide-y divide-gray-200"
         >
           {jobs.map((job) => (
             <li key={job._id}>
