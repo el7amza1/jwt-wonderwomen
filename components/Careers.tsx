@@ -1,26 +1,10 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { CalendarIcon, MapPinIcon, UsersIcon } from "@heroicons/react/20/solid";
-import { useEffect, useState } from "react";
 import CareersH from "./CareersHeader";
-import { createClient } from "next-sanity";
 import { Job } from "../types";
 
-export default function Careers() {
-  const [jobs, setJobs] = useState<Job[]>([]);
-  const client = createClient({
-    projectId: "vcq7xnt0",
-    dataset: "production",
-    apiVersion: "2022-09-25",
-    useCdn: false,
-  });
-  const getJobs = async () => {
-    const jobs = await client.fetch(`*[_type == "job"]`).then((res) => {
-      setJobs((jobs) => res);
-    });
-  };
-  useEffect(() => {
-    getJobs();
-  }, []);
+export default function Careers({ jobs }: { jobs: Job[] }) {
+  // const [jobs, setJobs] = useState<Job[]>([]);
   return (
     <div className="lg:flex justify-around items-center">
       <div className="hidden lg:block lg:w-1/2">
@@ -36,7 +20,7 @@ export default function Careers() {
           role="list"
           className="overflow-scroll overflow-x-hidden divide-y divide-gray-200"
         >
-          {jobs.map((job) => (
+          {jobs.map((job: any) => (
             <li key={job._id}>
               <a href="#" className="block hover:bg-gray-50">
                 <div className="px-4 py-4 sm:px-6">
